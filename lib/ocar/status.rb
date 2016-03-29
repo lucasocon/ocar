@@ -4,7 +4,6 @@ module Ocar
     attr_reader :number, :owner, :description, :date, :location, :type
 
     def initialize(json)
-      puts json['data']
       @number = json['data'][0]['numeroPieza'].to_s
       @owner = json['data'][0]['titular']
       @description = json['data'][0]['descripcion']
