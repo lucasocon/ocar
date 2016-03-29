@@ -31,7 +31,7 @@ module Ocar
 
   def check_response(response)
     json = JSON.parse(response.body)
-    if json['cod'] == 200
+    if json['success'] == true
       Ocar::Status.new(json)
     else
       nil
@@ -45,9 +45,9 @@ module Ocar
     Net::HTTP.start(*http_params) {|http| http.request(req)}
   end
 
-  def set_params(options)
+  def set_params(track_id)
     uri = URI.parse("http://www.oca.com.ar")
-    uri.query = URI.encode_www_form({q:"package-locator", type: options[:type], number: track_id})
+    uri.query = URI.encode_www_form({q: "package-locator", type: "dni", number: track_id})
     uri
   end
 
