@@ -20,7 +20,8 @@ module Ocar
       request = Typhoeus::Request.new("http://www.oca.com.ar",
         method: :get,
         params: { q: "package-locator",
-        type: type,number: track_id },
+        type: type,
+        number: track_id },
         headers: { Accept: "text/html" }
       )
       $hydra.queue(request)
