@@ -22,7 +22,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Please require the gem
+
+```ruby
+require 'ocar'
+```
+
+To get the information about a particular package.
+This method will search inside all the types of packages in OCA.
+
+```ruby
+Ocar.get_package 1234456
+```
+
+And if the package exists, will return:
+
+```ruby
+@date="07/03/2015 07:22:00",
+@description="Entregada",
+@location="CORDOBA",
+@number="0001235432",
+@owner="DIAZ, Bruno",
+@type="DNI">
+```
+
 
 ## Development
 
